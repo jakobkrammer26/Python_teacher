@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Python lernen</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 0; background: #f6f7f9; color: #222; }
+    header { background: #1f4e79; color: #fff; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    header h1 { margin: 0; font-size: 1.4rem; }
+    main { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .lektion-btn { display: block; width: 100%; text-align: left; padding: 14px; margin: 8px 0; font-size: 1rem; border: 1px solid #c9d3df; border-radius: 8px; background: #fff; cursor: pointer; }
+    .lektion-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .box { background: #fff; border-left: 5px solid #1f4e79; border-radius: 6px; padding: 14px 18px; margin: 12px 0; }
+    .box h3 { margin: 0 0 6px 0; color: #1f4e79; }
+    details { background: #fff; border: 1px solid #c9d3df; border-radius: 6px; padding: 10px 14px; margin: 12px 0; }
+    summary { cursor: pointer; font-weight: bold; color: #1f4e79; }
+    pre { background: #f2f2f2; padding: 10px; border-radius: 6px; overflow-x: auto; white-space: pre-wrap; }
+    textarea { width: 100%; box-sizing: border-box; font-family: Consolas, Menlo, monospace; font-size: 15px; padding: 10px; border: 1px solid #aab6c4; border-radius: 6px; tab-size: 4; }
+    .buttons { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; }
+    button { padding: 8px 14px; border: 0; border-radius: 6px; background: #1f4e79; color: #fff; cursor: pointer; font-size: 0.95rem; }
+    button.zweit { background: #6b7a8c; }
+    #ausgabe { min-height: 60px; background: #111; color: #d7f5d7; font-family: Consolas, Menlo, monospace; }
+    #pruefung { white-space: pre-wrap; padding: 10px; border-radius: 6px; }
+    #pruefung.ok { background: #e3f6e3; color: #17501a; }
+    #pruefung.fehler { background: #fde8e8; color: #7a1717; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Python lernen</h1>
+    <span id="fortschritt"></span>
+  </header>
+
+  <main>
+    <div id="liste"></div>
+
+    <section id="lektion" hidden>
+      <h2 id="titel"></h2>
+
+      <div class="box">
+        <h3>Aufgabe</h3>
+        <p id="aufgabe"></p>
+      </div>
+
+      <details open>
+        <summary>Unterrichtscode (zum Abtippen)</summary>
+        <pre id="vorlage"></pre>
+      </details>
+
+      <h3>Dein Code</h3>
+      <textarea id="editor" rows="14" spellcheck="false" placeholder="Tippe hier den Unterrichtscode ab ..."></textarea>
+
+      <div class="buttons">
+        <button id="run">▶ Ausführen</button>
+        <button id="check">✓ Prüfen</button>
+        <button id="reset" class="zweit">Zurücksetzen</button>
+        <button id="zurueck" class="zweit">Zur Übersicht</button>
+      </div>
+
+      <h3>Ausgabe</h3>
+      <pre id="ausgabe"></pre>
+
+      <div id="pruefung"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
