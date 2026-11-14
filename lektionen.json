@@ -1,0 +1,244 @@
+[
+  {
+    "id": "01",
+    "titel": "1. Rechnen und Reihenfolge",
+    "datei": "python/01_rechnen.py",
+    "aufgabe": "Berechne 3 + 4 * 2 und danach (2 + 3) ** 2. Gib beide Ergebnisse aus, zuerst das erste, jeweils in einer eigenen Zeile.",
+    "hinweise": [
+      "Verwende print(), damit das Ergebnis angezeigt wird.",
+      "Punkt vor Strich: * wird vor + berechnet. Mit Klammern änderst du die Reihenfolge.",
+      "** ist die Potenz. (2 + 3) ** 2 bedeutet: erst 2 + 3 rechnen, dann quadrieren."
+    ],
+    "tests": [
+      {
+        "erwartet": [
+          "11",
+          "25"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "02",
+    "titel": "2. Variablen",
+    "datei": "python/02_variablen.py",
+    "aufgabe": "Lege die Variable preis mit dem Wert 2.5 und die Variable anzahl mit dem Wert 4 an. Gib den Gesamtpreis aus. Die Variablen müssen so heißen, wie oben angegeben.",
+    "hinweise": [
+      "Eine Variable legst du mit = an, zum Beispiel preis = 2.5.",
+      "Der Gesamtpreis ist preis mal anzahl."
+    ],
+    "tests": [
+      {
+        "zusatz": "print(preis, anzahl)",
+        "erwartet": [
+          "10.0",
+          "2.5 4"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "03",
+    "titel": "3. Eingaben mit input()",
+    "datei": "python/03_eingaben.py",
+    "aufgabe": "Frage mit input() nach dem Namen. Gib danach den Satz 'Hallo <Name>!' aus. Führende und nachfolgende Leerzeichen sollen entfernt werden.",
+    "hinweise": [
+      "input() liefert immer Text. Du musst ihn nicht umwandeln, hier brauchst du nur den Text.",
+      "Mit name.strip() entfernst du Leerzeichen am Anfang und am Ende.",
+      "Setze den Satz mit + oder einem f-String zusammen: f\"Hallo {name}!\""
+    ],
+    "tests": [
+      {
+        "eingaben": [
+          "Anna"
+        ],
+        "erwartet": [
+          "Hallo Anna!"
+        ]
+      },
+      {
+        "eingaben": [
+          "Max"
+        ],
+        "erwartet": [
+          "Hallo Max!"
+        ]
+      },
+      {
+        "eingaben": [
+          " Lisa "
+        ],
+        "erwartet": [
+          "Hallo Lisa!"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04",
+    "titel": "4. Bedingungen",
+    "datei": "python/04_bedingungen.py",
+    "aufgabe": "Schreibe eine Funktion altersklasse(alter). Sie gibt 'Kind' zurück, wenn alter kleiner als 12 ist, 'Jugendlicher', wenn alter kleiner als 18 ist, und sonst 'Erwachsener'.",
+    "hinweise": [
+      "Nutze if, elif und else.",
+      "Eine Grenze ist genau dann erreicht: Bei 12 gilt nicht mehr 'Kind', bei 18 nicht mehr 'Jugendlicher'."
+    ],
+    "tests": [
+      {
+        "zusatz": "print(altersklasse(5))",
+        "erwartet": [
+          "Kind"
+        ]
+      },
+      {
+        "zusatz": "print(altersklasse(12))",
+        "erwartet": [
+          "Jugendlicher"
+        ]
+      },
+      {
+        "zusatz": "print(altersklasse(18))",
+        "erwartet": [
+          "Erwachsener"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "05",
+    "titel": "5. Schleifen",
+    "datei": "python/05_schleifen.py",
+    "aufgabe": "Schreibe eine Funktion summe_bis(n), die die Summe aller Zahlen von 1 bis n zurückgibt. Für n = 0 ist das Ergebnis 0.",
+    "hinweise": [
+      "Starte mit summe = 0 und addiere in einer Schleife.",
+      "range(1, n + 1) liefert die Zahlen von 1 bis n.",
+      "Vergiss das return nicht."
+    ],
+    "tests": [
+      {
+        "zusatz": "print(summe_bis(5))",
+        "erwartet": [
+          "15"
+        ]
+      },
+      {
+        "zusatz": "print(summe_bis(100))",
+        "erwartet": [
+          "5050"
+        ]
+      },
+      {
+        "zusatz": "print(summe_bis(0))",
+        "erwartet": [
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "06",
+    "titel": "6. Listen durchsuchen",
+    "datei": "python/06_listen.py",
+    "aufgabe": "Schreibe eine Funktion groesste(zahlen), die die größte Zahl einer Liste zurückgibt. Verwende dafür keine eingebaute Funktion max().",
+    "hinweise": [
+      "Merke dir den bisher größten Wert in einer Variablen.",
+      "Starte mit dem ersten Element: zahlen[0]. Dann gehst du mit einer for-Schleife durch alle Elemente.",
+      "Vergleiche jeden Wert mit deinem bisherigen Größten und ersetze ihn, wenn er größer ist."
+    ],
+    "tests": [
+      {
+        "verboten": [
+          "max("
+        ],
+        "zusatz": "print(groesste([3, 8, 1, 5]))",
+        "erwartet": [
+          "8"
+        ]
+      },
+      {
+        "verboten": [
+          "max("
+        ],
+        "zusatz": "print(groesste([-4, -9]))",
+        "erwartet": [
+          "-4"
+        ]
+      },
+      {
+        "verboten": [
+          "max("
+        ],
+        "zusatz": "print(groesste([7]))",
+        "erwartet": [
+          "7"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "07",
+    "titel": "7. Text zählen",
+    "datei": "python/07_text.py",
+    "aufgabe": "Schreibe eine Funktion zaehle_a(wort), die zurückgibt, wie oft der Buchstabe a im Wort vorkommt. Groß- und Kleinschreibung sollen gleich behandelt werden, A und a zählen beide.",
+    "hinweise": [
+      "Wandle das Wort zuerst mit .lower() in Kleinbuchstaben um.",
+      "Die Methode .count(\"a\") zählt, wie oft der Text vorkommt.",
+      "Gib das Ergebnis mit return zurück."
+    ],
+    "tests": [
+      {
+        "zusatz": "print(zaehle_a(\"Banane\"))",
+        "erwartet": [
+          "2"
+        ]
+      },
+      {
+        "zusatz": "print(zaehle_a(\"Ananas\"))",
+        "erwartet": [
+          "3"
+        ]
+      },
+      {
+        "zusatz": "print(zaehle_a(\"Python\"))",
+        "erwartet": [
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08",
+    "titel": "Projekt: Das Zahlenraten-Spiel",
+    "datei": "python/08_projekt.py",
+    "aufgabe": "Schreibe ein Zahlenraten-Spiel. Der Computer wählt mit random.randint(1, 20) eine Geheimzahl. Der Spieler tippt mit input(). Antworte mit 'Zu klein!', 'Zu groß!' oder 'Richtig!'. Nach 'Richtig!' endet das Spiel.",
+    "hinweise": [
+      "Hole die Geheimzahl mit random.randint(1, 20) und speichere sie in einer Variablen.",
+      "Eine while-Schleife wiederholt das Raten, bis der Tipp richtig ist. Mit break beendest du sie.",
+      "Vergleiche den Tipp mit der Geheimzahl. Die Meldungen gibst du mit print() aus."
+    ],
+    "tests": [
+      {
+        "vorher": "import random\nrandom.randint = lambda a, b: 7",
+        "eingaben": [
+          "3",
+          "9",
+          "7"
+        ],
+        "enthaelt": [
+          "zu klein",
+          "zu groß",
+          "richtig"
+        ]
+      },
+      {
+        "vorher": "import random\nrandom.randint = lambda a, b: 7",
+        "eingaben": [
+          "7"
+        ],
+        "enthaelt": [
+          "richtig"
+        ]
+      }
+    ]
+  }
+]
