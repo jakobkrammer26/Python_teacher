@@ -24,6 +24,8 @@
     #pruefung { white-space: pre-wrap; padding: 10px; border-radius: 6px; }
     #pruefung.ok { background: #e3f6e3; color: #17501a; }
     #pruefung.fehler { background: #fde8e8; color: #7a1717; }
+    .hinweis { background: #fff8e1; border-left: 4px solid #e0a800; padding: 8px 12px; border-radius: 6px; margin: 6px 0; }
+    #loesung { background: #f2f2f2; padding: 10px; border-radius: 6px; white-space: pre-wrap; }
   </style>
 </head>
 <body>
@@ -33,6 +35,17 @@
   </header>
 
   <main>
+    <section id="anmeldung" hidden>
+      <div class="box">
+        <h3>Zugang</h3>
+        <p>Bitte gib den PIN ein, den du im Brief findest.</p>
+        <input id="pin" type="password" inputmode="numeric" autocomplete="off" placeholder="PIN" style="font-size:1.1rem;padding:8px;width:160px;">
+        <button id="pin-knopf">Anmelden</button>
+        <p id="pin-fehler" style="color:#7a1717;"></p>
+      </div>
+    </section>
+
+    <div id="app" hidden>
     <div id="liste"></div>
 
     <section id="lektion" hidden>
@@ -42,6 +55,23 @@
         <h3>Aufgabe</h3>
         <p id="aufgabe"></p>
       </div>
+
+      <h3>Dein Code</h3>
+      <textarea id="editor" rows="14" spellcheck="false" placeholder="Schreibe hier deine Lösung ..."></textarea>
+
+      <div class="buttons">
+        <button id="check">✓ Prüfen</button>
+        <button id="run" class="zweit">▶ Ausführen</button>
+        <button id="hinweis-knopf" class="zweit">Hinweis anzeigen</button>
+        <button id="loesung-knopf" class="zweit" disabled>Lösung</button>
+        <button id="reset" class="zweit">Zurücksetzen</button>
+        <button id="zurueck" class="zweit">Zur Übersicht</button>
+      </div>
+
+      <div id="hinweise"></div>
+
+      <h3>Ausgabe</h3>
+      <pre id="ausgabe"></pre>
 
       <details open>
         <summary>Unterrichtscode (zum Abtippen)</summary>
@@ -62,7 +92,10 @@
       <pre id="ausgabe"></pre>
 
       <div id="pruefung"></div>
+
+      <pre id="loesung" hidden></pre>
     </section>
+    </div>
   </main>
 
   <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
